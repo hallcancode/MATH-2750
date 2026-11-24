@@ -1,0 +1,112 @@
+\documentclass[11pt]{article}
+\usepackage[margin=0.85in]{geometry}
+\usepackage{amsmath,amstext,amssymb,amsthm}
+\usepackage{multirow}
+\usepackage{tikz,pgfplots}
+\pgfplotsset{compat=1.18}
+\usepackage{graphicx}
+\graphicspath{{./img/}}
+\usepackage{caption,subcaption}
+\usepackage{xcolor}
+\usepackage{tcolorbox}
+\usepackage{hyperref}
+
+\hypersetup{
+    colorlinks=true,
+    linkcolor=blue,
+    urlcolor=blue
+}
+\setlength{\parindent}{0in}
+\setlength{\parskip}{0.5em}
+
+\providecommand{\la}{\langle}
+\providecommand{\ra}{\rangle}
+\providecommand{\myvec}[1]{\mathbf{#1}}
+
+% Render \content{main}{presentation}{nopresentation}{comments} with answers/notes visible
+\newcommand{\content}[4]{%
+    #1\par
+    \if\relax\detokenize{#3}\relax\else
+        #3\par
+    \fi
+    \if\relax\detokenize{#4}\relax\else
+        \begin{tcolorbox}[colback=blue!5!white, colframe=blue!40!black, boxrule=0.5pt, arc=2pt, left=6pt, right=6pt, top=4pt, bottom=4pt]
+            \small\textbf{Notes / Answer:} #4
+        \end{tcolorbox}
+    \fi
+    \medskip
+}
+
+% Common math & theorem environments
+\providecommand{\pd}[2]{\frac{\partial #1}{\partial #2}}
+\providecommand{\R}{\mathbb{R}}
+\providecommand{\N}{\mathbb{N}}
+\providecommand{\Z}{\mathbb{Z}}
+\providecommand{\ve}[1]{\mathbf{#1}}
+
+\theoremstyle{definition}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{example}[theorem]{Example}
+\newtheorem{remark}[theorem]{Remark}
+\newtheorem{note}[theorem]{Note}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{lemma}[theorem]{Lemma}
+
+\begin{document}
+
+\title{Calculus 3 Lecture Notes}
+\author{Braden Carlson}
+\date{}
+\maketitle
+\tableofcontents
+\newpage
+
+\section{Three Dimensional Coordinate Systems and Vectors}
+\input{lecture-1.tex}
+\input{lecture-2.tex}
+\input{lecture-3.tex}
+\input{lecture-4.tex}
+\input{lecture-5.tex}
+\input{lecture-6.tex}
+\input{lecture-7.tex}
+
+\section{Vector Functions}
+\input{lecture-8.tex}
+\input{lecture-9.tex}
+\input{lecture-10.tex}
+
+\section{Partial Derivatives}
+\input{lecture-11.tex}
+\input{lecture-12.tex}
+\input{lecture-13.tex}
+\input{lecture-14.tex}
+\input{lecture-15.tex}
+\input{lecture-16.tex}
+\input{lecture-17.tex}
+\input{lecture-18.tex}
+
+\section{Multiple Integrals}
+\input{lecture-19.tex}
+\input{lecture-20.tex}
+\input{lecture-21.tex}
+\input{lecture-22.tex}
+\input{lecture-23.tex}
+\input{lecture-24.tex}
+\input{lecture-25.tex}
+\input{lecture-26.tex}
+\input{lecture-27.tex}
+
+\section{Vector Calculus}
+\input{lecture-28.tex}
+\input{lecture-29.tex}
+\input{lecture-30.tex}
+\input{lecture-31.tex}
+\input{lecture-32.tex}
+\input{lecture-33.tex}
+\input{lecture-34.tex}
+\input{lecture-35.tex}
+\input{lecture-36.tex}
+
+\end{document}
