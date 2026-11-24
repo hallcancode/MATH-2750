@@ -1,0 +1,31 @@
+name: Build PDF
+
+on:
+  push:
+    branches: [ master ]
+    paths:
+      - 'tex/**'
+      - '.github/workflows/build.yml'
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Compile LaTeX to PDF
+        uses: xu-cheng/latex-action@v3
+        with:
+          root_file: master.tex
+          working_directory: tex
+          args: -pdf -interaction=nonstopmode
+
+      - name: Upload PDF Artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: Lecture Notes
+          path: tex/master.pdf
+          retention-days: 90
